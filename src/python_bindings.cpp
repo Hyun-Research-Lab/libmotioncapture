@@ -32,9 +32,10 @@ PYBIND11_MODULE(motioncapture, m) {
       .def_property_readonly("position", &RigidBody::position)
       .def_property_readonly("rotation", &RigidBody::rotation);
 
-  //
+  // MotionCapture
   py::class_<MotionCapture>(m, "MotionCapture")
       .def("waitForNextFrame", &MotionCapture::waitForNextFrame, py::call_guard<py::gil_scoped_release>())
-      .def_property_readonly("rigidBodies", &MotionCapture::rigidBodies);
+      .def_property_readonly("rigidBodies", &MotionCapture::rigidBodies)
+      .def_property_readonly("pointCloud", &MotionCapture::pointCloud);
 
 }
