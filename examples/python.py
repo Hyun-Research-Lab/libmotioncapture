@@ -13,3 +13,5 @@ if __name__ == "__main__":
         mc.waitForNextFrame()
         for name, obj in mc.rigidBodies.items():
             print(name, obj.position, obj.rotation.z)
+        for i, (x, y, z) in enumerate(mc.pointCloud):
+            print(f'Unlabeled Point {i}: {x}, {y}, {z}')
